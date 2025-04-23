@@ -1,0 +1,31 @@
+/* your existing styles… */
+
+.search-fields {
+    position: relative; /* so our suggestion lists can be positioned absolutely inside */
+}
+
+/* suggestion dropdown styling */
+.suggestions-list {
+    position: absolute;
+    top: 100%;    /* just below the input */
+    left: 0;
+    right: 0;
+    background: white;
+    color: black;
+    margin: 4px 0 0 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestions-list li {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background: #eee;
+}

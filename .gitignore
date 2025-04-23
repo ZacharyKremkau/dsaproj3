@@ -1,0 +1,33 @@
+# === Build & IDE artifacts ===
+cmake-build-debug/
+build/
+*.o
+*.obj
+*.exe
+*.log
+
+# CLion / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# macOS cruft
+.DS_Store
+
+# Python virtualenvs
+venv/
+__pycache__/
+
+# Node modules (if you ever add JS deps)
+node_modules/
+
+# === But do keep these directories in your repo! ===
+!data/ml-latest-small/
+!public/
+!scripts/
+!external/include/crow/
+!external/include/nlohmann/json.hpp

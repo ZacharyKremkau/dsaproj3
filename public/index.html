@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Movie Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .welcome {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            color: white;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #4CAF50;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .toggle-label {
+            margin-top: 10px;
+            margin-bottom: 30px;
+            color: white;
+            font-size: 15px;
+        }
+
+        .search-fields {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .search-fields input {
+            padding: 6px 10px;
+            font-size: 16px;
+            width: 150px;
+        }
+
+        .search-button {
+            margin-top: 10px;
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="welcome">
+        Welcome! Choose to search via Heap or Multimap and input any genre or actors or directors to find the perfect movie for you.
+    </div>
+
+    <div class="toggle-container">
+        <label class="toggle-switch">
+            <input type="checkbox" id="data-structure-toggle" />
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div class="toggle-label">Multimap &lt;--&gt; Heap</div>
+
+    <div class="search-fields">
+        <div class="autocomplete-container">
+            <input type="text" id="genre-input" placeholder="Genre" autocomplete="off" />
+        </div>
+        <div class="autocomplete-container">
+            <input type="text" id="actor-input" placeholder="Actors" autocomplete="off" />
+        </div>
+        <div class="autocomplete-container">
+            <input type="text" id="director-input" placeholder="Directors" autocomplete="off" />
+        </div>
+    </div>
+
+    <button class="search-button" id="find-movie-button">Find Perfect Movie</button>
+    <div id="results" style="margin-top: 30px; color: white;"></div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
