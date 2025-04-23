@@ -1,0 +1,1 @@
+To run code just click run and then it should give you a link to a local server like in the video, just click on the link and what broswer to open it with, firefox works best if chrome antivirus is making it act up
